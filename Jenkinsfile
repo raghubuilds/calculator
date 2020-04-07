@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
     registry = "raghuveerk/calculator"
-    registryCredential = ‘dockerhub’
+    registryCredential = "dockerhub"
     }
     stages {
         stage("Compile") {
