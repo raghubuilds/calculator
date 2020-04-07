@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-    registry = "docker.aadyantha.com:5000/calculator"
+    registry = "raghuveerk/calculator"
     registryCredential = ‘docker-registry’
     }
     stages {
@@ -27,6 +27,8 @@ pipeline {
         }
         stage("Push Image") {
             steps {
-                sh "docker push 
+                sh "docker push raghuveerk/calculator" 
+            }
+        }
     }
 }
