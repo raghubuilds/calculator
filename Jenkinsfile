@@ -29,5 +29,6 @@ pipeline {
         withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
         sh "docker push raghuveerk/calculator"
         }
+        }
     }
 }
