@@ -22,7 +22,8 @@ pipeline {
             }
         }
         stage('Push image') {
-            steps {
+            steps  {
+             withDockerRegistry([ credentialsId: "dockerhub", url: "https://index.docker.io/v1/" ])
              sh "docker push raghuveerk/calculator:v1"
             }
         }
