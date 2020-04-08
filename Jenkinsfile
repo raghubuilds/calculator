@@ -21,6 +21,11 @@ pipeline {
                 sh "docker build -t raghuveerk/calculator:v1 ."
             }
         }
+         stage("Docker login") {
+            steps {
+                sh "docker login"
+            }
+        }
         stage('Push image') {
             steps {
              sh "docker push raghuveerk/calculator:v1"
