@@ -30,7 +30,7 @@ pipeline {
         }
         stage('Staging Deploy') {
             steps {
-                sh "docker run -d -rm -p 8765:8080 --name calculator raghuveerk/calculator:v1"
+                sh "docker run -d --rm -p 8765:8081 --name calculator raghuveerk/calculator:v1"
             }
         }
         stage("Acceptance Test") {
