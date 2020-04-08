@@ -18,17 +18,17 @@ pipeline {
         }
         stage("Docker image") {
             steps {
-                sh "docker build -t raghuveerk/calculator ."
+                sh "sudo docker build -t raghuveerk/calculator ."
             }
         }
         stage("Docker Login") {
             steps {
-                sh "docker login"
+                sh "sudo docker login"
             }
         }
         stage('Push image') {
             steps {
-             sh "docker push raghuveerk/calculator"
+             sh "sudo docker push raghuveerk/calculator"
             }
         }
     }
