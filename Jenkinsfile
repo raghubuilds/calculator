@@ -18,12 +18,12 @@ pipeline {
         }
         stage("Docker image") {
             steps {
-                sh "docker build -t raghuveerk/calculator ."
+                sh "docker build -t raghuveerk/calculator:v1 ."
             }
         }
         stage('Push image') {
             steps {
-             sh "docker push raghuveerk/calculator"
+             sh "docker push raghuveerk/calculator:v1"
             }
         }
     }
