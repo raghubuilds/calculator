@@ -25,10 +25,15 @@ pipeline {
                 sh "docker build -t raghuveerk/calculator ."
             }
         }
-        stage('Push image') {
-        withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
-        sh "docker push raghuveerk/calculator"
+        stage("Docker Login") {
+            steps {
+                sh "docker login"
+            }
         }
+        stage('Push image') {
+            steps {
+             sh "docker push raghuveerk/calculator"
+            }
         }
     }
 }
