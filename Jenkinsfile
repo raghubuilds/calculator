@@ -28,5 +28,10 @@ pipeline {
              }
             }
         }
+        stage('Staging Deploy') {
+            steps {
+                sh "docker run -d -rm -p 8765:8080 --name calculator raghuveerk/calculator:v1"
+            }
+        }
     }
 }
