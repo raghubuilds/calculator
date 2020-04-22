@@ -1,0 +1,13 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: compile
+  image: openjdk:7
+  commands:
+  - ./gradlew compileJava
+- name: test
+  image: openjdk:7
+  commands:
+  - ./gradlew test
