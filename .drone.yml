@@ -3,10 +3,10 @@ name: default
 
 steps:
 - name: compile
-  image: openjdk:7
+  image: openjdk:8
   commands:
   - ./gradlew compileJava
 - name: test
-  image: openjdk:7
+  image: openjdk:8
   commands:
   - ./gradlew test
