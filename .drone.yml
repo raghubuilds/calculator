@@ -10,3 +10,20 @@ steps:
   image: openjdk:8
   commands:
   - ./gradlew test
+- name: build
+  image: openjdk:8
+  commands:
+  - ./gradlew build
+- name: publish
+  image: plugins/docker
+  settings:
+    repo: raghuveerk/calculator
+    tags: 
+    - 1.0.0
+    - ${DRONE_COMMIT_SHA:0:7} 
+    username:
+     from_secret: docker_username
+    password:
+     from_secret: docker_password
+
+  
